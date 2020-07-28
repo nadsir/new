@@ -20,3 +20,14 @@ Route::get('/show','Productfilter@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test', 'HomeController@test')->name('test');
+
+
+Route::middleware('is_admin')->group(function (){
+    Route::get('admin','AdminController@index')->name('admin');
+});
+
+
+Route::middleware('is_homeagency')->group(function (){
+    Route::get('homeagency','HomeagencyController@index')->name('homeagency');
+});

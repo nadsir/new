@@ -33,6 +33,10 @@ $factory->define(Product::class, function (Faker $faker) {
         'size' => $faker->numberBetween(1,10),
         'color' => $faker->colorName,
         'brand' =>$faker->name,
+        'price'=>$faker->numberBetween(100,1000),
+        'bedroom'=>$faker->numberBetween(1,5),
+        'src'=>$faker->name,
+
 
     ];
 });
